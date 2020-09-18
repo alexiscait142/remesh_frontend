@@ -1,9 +1,10 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
+import "@testing-library/jest-dom"
 
-test('renders learn react link', () => {
+test('renders add conversation button', () => {
   const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
+  const linkElement = getByText(/Add conversation/i);
   expect(linkElement).toBeInTheDocument();
 });

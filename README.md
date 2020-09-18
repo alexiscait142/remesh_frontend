@@ -27,4 +27,6 @@ You can also click on a conversation title to see all of its messages, and all t
 Messages and thoughts require whatever you want them to say (foreign key association is done behind the scenes).
 Conversations only require the title.
 
-No additional packages were used in this project except those which are included in the create-react-app bootstrapper (https://reactjs.org/docs/create-a-new-react-app.html).
+A test can be found in the App.test.js file. You can run the rest by running `npm test` in the command line.
+
+Packages used were those included in the create-react-app bootstrapper (https://reactjs.org/docs/create-a-new-react-app.html).
