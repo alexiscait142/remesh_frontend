@@ -20,12 +20,20 @@ class Form extends Component {
         else if (this.props.message){
             this.props.postThought(this.state.text, parseInt(this.props.message))
         }
+        else {
+            this.props.postConversation(this.state.text)
+        }
     }
 
     render(){
         return(
             <form>
-                <textarea placeholder="Enter message" name="text" onChange={this.handleChange}></textarea>
+                <textarea
+                    placeholder={this.props.postConversation ? "enter title" : null}
+                    name="text"
+                    onChange={this.handleChange}
+                    >
+                </textarea>
                 <input type="submit" onClick={this.handleSubmit}></input>
             </form>
         )

@@ -30,6 +30,22 @@ class App extends Component {
       .then(thoughts=>this.setState({thoughts}))
   }
 
+  addConversation = (title) => {
+    fetch('http://localhost:8000/conversations/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({title: title})
+    })
+    .then(response=>response.json())
+    .then(conversation=>{
+      this.setState({
+        conversations: [...this.state.conversations, conversation]
+      })
+    })
+  }
+
   addMessage = (text, conversation) => {
     fetch('http://localhost:8000/messages/', {
       method: 'POST',
@@ -83,6 +99,11 @@ class App extends Component {
       this.setState({
         showThoughts: true,
         messageID: parseInt(e.target.value),
+        showForm: true
+      })
+    }
+    else if(e.target.className === "add-conversation"){
+      this.setState({
         showForm: true
       })
     }
@@ -143,6 +164,8 @@ class App extends Component {
                                         </button> : null}
           {this.state.showForm ? <Form conversation={this.state.conversationID} postMessage={this.addMessage}/> : null}
         </div>
+        <button onClick={this.handleClick} className="add-conversation">Add conversation</button>
+        {this.state.showForm ? <Form postConversation={this.addConversation}/> : null}
       </div>
     );
   }

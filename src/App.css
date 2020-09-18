@@ -83,3 +83,7 @@ form {
 .searchbar {
   width: 20rem;
 }
+
+.add {
+  background-color: greenyellow;
+}
