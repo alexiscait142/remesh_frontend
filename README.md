@@ -21,6 +21,10 @@ npm start
 to start the server and navigate to http://localhost:3000 in your browser. You should see titles of conversations as well as a search bar.
 
 You can type terms into the search bar and it will filter the conversations as you type.
-You can also click on a conversation title to see all of its messages, and all the thoughts on those messages. If you scroll to the bottom of the conversation's messages, you can add a message. You can also click the "add thought" button to add a thought to that given message.
+You can also click on a conversation title to see all of its messages, and all the thoughts on those messages. If you scroll to the bottom of the conversation's messages, you can add a message. You can also click the "add thought" button to add a thought to that given message (at the moment, you will have to refresh the page to see the thought you added). You can also add a new conversation with the button at the bottom. See these required fields:
+
+
+Messages and thoughts require whatever you want them to say (foreign key association is done behind the scenes).
+Conversations only require the title.
 
 No additional packages were used in this project except those which are included in the create-react-app bootstrapper (https://reactjs.org/docs/create-a-new-react-app.html).
